@@ -132,7 +132,7 @@
     components: {Foot, DialogModal},
     methods: {
       showDialog() {
-        this.dialog.isShow = true
+        this.dialog.isShow = true;
       },
       closeDialog(flag) {
         this.dialog.isShow = flag;
@@ -177,7 +177,7 @@
       .top-about {
         color: #000;
         width: 1056px;
-		max-width: 75%;
+        max-width: 75%;
         margin: 0 auto;
         background: #fff;
         padding: 20px;

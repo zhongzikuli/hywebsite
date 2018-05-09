@@ -18,7 +18,6 @@
         </div>
       </div>
     </template>
-
   </div>
 </template>
 
@@ -94,9 +93,8 @@
       window.addEventListener('scroll', this.scroll);
     },
     methods: {
-
       showDialog() {
-        this.dialog.isShow = true
+        this.dialog.isShow = true;
       },
       closeDialog(flag) {
         this.dialog.isShow = flag;
@@ -188,7 +186,7 @@
         line-height: 40px;
         border-radius: 5px;
         border: 1px solid #fff;
-        z-index: 9;
+        z-index: 11;
       }
     }
   }

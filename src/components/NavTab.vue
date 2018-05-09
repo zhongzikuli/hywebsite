@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="head">
     <div class="nav-tab flex">
       <div class="left">
         <img src="../images/icon-logo.png" alt="logo">
@@ -73,7 +73,7 @@
 </script>
 
 <style scoped lang="less">
-  .wrap{
+  .head{
     background: #fff;
   }
   .nav-tab {
