@@ -3,7 +3,7 @@
     <div class="dialog-cover" v-if="dialog.isShow" @click="closeMyself"></div>
     <transition name="drop">
       <div class="dialog-content" v-if="dialog.isShow">
-        <form @submit.prevent="submit">
+        <form>
           <div class="dialog-head flex">
             <span>{{dialog.head}}</span>
             <span class="dialog-close" @click="closeMyself">x</span>
@@ -21,7 +21,7 @@
             </div>
           </div>
           <div class="dialog-foot flex">
-            <button class="btn-confirm">确定提交</button>
+            <button class="btn-confirm" @submit.prevent="submit">确定提交</button>
             <button class="btn-cancel" @click="closeMyself">取消</button>
           </div>
         </form>
@@ -139,7 +139,7 @@
           label {
             width: 100px;
             line-height: 30px;
-            color: #000;
+            color: #404040;
             text-align: right;
           }
           input {

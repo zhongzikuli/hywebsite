@@ -78,7 +78,7 @@
             ul {
               li {
                 line-height: 22px;
-                color: #575757;
+                color: #757575;
               }
             }
           }
@@ -86,7 +86,6 @@
         .right {
           flex: 3;
           text-align: right;
-
         }
       }
     }

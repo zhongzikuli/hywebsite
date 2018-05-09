@@ -143,6 +143,7 @@
 
 <style scoped lang="less">
   .main {
+    background: #fff;
     .top {
       height: 600px;
       background: url("../images/bg-home.jpg") 100% 100%;
@@ -264,7 +265,7 @@
             flex: 1;
             margin-left: 30px;
             h5 {
-              color: #222;
+              color: #404040;
               font-size: 16px;
               line-height: 28px;
             }
@@ -287,7 +288,7 @@
           flex: 1;
           padding-left: 50px;
           h5 {
-            color: #222;
+            color: #404040;
             font-size: 16px;
             line-height: 28px;
           }

@@ -61,15 +61,16 @@
             border-bottom: 20px solid #f5f5f5;
             cursor: pointer;
             h3 {
+              font-weight: 400;
+              color: #404040;
               span {
                 margin-right: 10px;
                 font-size: 14px;
-                font-weight: 400;
               }
             }
             p {
               margin-top: 10px;
-              color: #888;
+              color: #757575;
             }
             .left {
               flex: 1;
@@ -83,7 +84,7 @@
               padding: 5px;
               margin-top: 10px;
             }
-            &:last-of-type{
+            &:last-of-type {
               border-bottom: none;
             }
           }

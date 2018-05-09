@@ -44,7 +44,7 @@
           flex: 1;
           padding-left: 50px;
           h5 {
-            color: #222;
+            color: #404040;
             font-size: 16px;
             line-height: 28px;
           }

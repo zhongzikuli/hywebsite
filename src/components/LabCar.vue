@@ -186,7 +186,7 @@
               span {
                 margin-left: 10px;
                 font-size: 14px;
-                color: #ddd;
+                color: #757575;
               }
             }
             p {

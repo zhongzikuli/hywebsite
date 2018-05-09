@@ -132,7 +132,8 @@
       filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='bg-login.png', sizingMethod='scale');
       .item-content {
         padding-top: 100px;
-        width: 800px;
+        width: 75%;
+        min-width: 1096px;
         height: 450px;
         margin: 0 auto;
         display: flex;
