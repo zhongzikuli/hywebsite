@@ -28,7 +28,7 @@
     },
     methods: {
       async loadDetail() {
-        let list = require("../mock/index");
+        let list = require("../../mock/index");
         let id = this.$route.params.id;
         this.detail = list.find(it => it.id === id)
       }

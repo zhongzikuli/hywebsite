@@ -27,7 +27,7 @@
     },
     methods: {
       async loadData() {
-        this.recruit = require("../mock/index");
+        this.recruit = require("../../mock/index").reverse();
       }
     }
   }
