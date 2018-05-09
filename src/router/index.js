@@ -41,7 +41,7 @@ export default new Router({
     name: 'HumanResource',
     component: HumanResource
   }, {
-    path: '/recruit/id',
+    path: '/recruit/:id',
     name: 'Recruit',
     component: Recruit
   }, {
