@@ -35,6 +35,19 @@
         }
         .main {
           width: 100%;
+          .loading {
+            position: fixed;
+            width: 80px;
+            height: 80px;
+            left: 50%;
+            margin-left: -40px;
+            top: 50%;
+            margin-top: -40px;
+            img {
+              width: 120%;
+              height: 120%;
+            }
+          }
           .copy {
             background: #404040;
             text-align: center;

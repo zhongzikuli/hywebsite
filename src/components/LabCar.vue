@@ -39,6 +39,9 @@
         </div>
       </div>
     </template>
+    <div class="loading" v-if="loading">
+      <img src="../images/loading.gif" alt="">
+    </div>
   </div>
 </template>
 
@@ -48,6 +51,8 @@
     data() {
       return {
         page: true,
+        loading: false,
+        flag: true,
         carItem: [{
           title: "保险",
           label: "INSURANCE",
@@ -90,8 +95,13 @@
         this.b = document.body.scrollTop || document.documentElement.scrollTop;
         this.c = document.documentElement.clientHeight;
         //通过判断滚动条的top位置与可视网页之和与整个网页的高度是否相等来决定是否加载内容；
-        if (this.b + this.c + 50 >= this.a) {
-          this.page = false
+        if (this.b + this.c + 10 >= this.a) {
+          if (this.flag) {
+            this.loading = true;
+            setTimeout(() => {
+              this.flag = this.loading = this.page = false
+            }, 1500)
+          }
         }
       }
     }

@@ -18,6 +18,9 @@
         </div>
       </div>
     </template>
+    <div class="loading" v-if="loading">
+      <img src="../images/loading.gif" alt="">
+    </div>
   </div>
 </template>
 
@@ -29,6 +32,8 @@
     data() {
       return {
         page: true,
+        loading:false,
+        flag:true,
         carFinance: [{
           label: "大数据征信",
           src: require('../images/icon-sql.png'),
@@ -104,9 +109,12 @@
         this.c = document.documentElement.clientHeight;
         //通过判断滚动条的top位置与可视网页之和与整个网页的高度是否相等来决定是否加载内容；
         if (this.b + this.c + 10 >= this.a) {
-          setTimeout(() => {
-            this.page = false
-          }, 1500)
+          if (this.flag) {
+            this.loading = true;
+            setTimeout(() => {
+              this.flag = this.loading = this.page = false
+            }, 1500)
+          }
         }
       }
     }

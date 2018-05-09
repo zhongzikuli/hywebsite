@@ -14,6 +14,9 @@
         </div>
       </div>
     </template>
+    <div class="loading" v-if="loading">
+      <img src="../images/loading.gif" alt="">
+    </div>
   </div>
 </template>
 
@@ -22,7 +25,9 @@
     name: "video-face",
     data() {
       return {
-        page: true
+        page: true,
+        loading: false,
+        flag: true
       }
     },
     mounted() {
@@ -35,7 +40,12 @@
         this.c = document.documentElement.clientHeight;
         //通过判断滚动条的top位置与可视网页之和与整个网页的高度是否相等来决定是否加载内容；
         if (this.b + this.c + 10 >= this.a) {
-          this.page = false
+          if (this.flag) {
+            this.loading = true;
+            setTimeout(() => {
+              this.flag = this.loading = this.page = false
+            }, 1500)
+          }
         }
       }
     }
@@ -58,21 +68,34 @@
       position: absolute;
       top: 100px;
       min-width: 1096px;
-      min-height: 600px;
+      min-height: 650px;
       text-align: center;
       color: #fff;
       .video {
-        width: 450px;
         margin-top: 180px;
         text-align: left;
-        margin-left: 130px;
+        margin-left: 200px;
         h3 {
           font-size: 30px;
         }
-        p{
+        p {
           font-size: 16px;
           line-height: 30px;
           margin-top: 20px;
+        }
+      }
+      @media screen {
+        @media (max-width: 1660px) {
+          .video {
+            width: 480px;
+            margin-left: 180px;
+          }
+        }
+        @media (max-width: 1260px) {
+          .video {
+            width: 450px;
+            margin-left: 130px;
+          }
         }
       }
       h5 {
@@ -87,6 +110,4 @@
       }
     }
   }
-
-
 </style>
