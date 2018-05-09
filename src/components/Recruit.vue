@@ -40,7 +40,10 @@
   .main {
     .content {
       width: 1056px;
+      max-width: 75%;
       margin: 15px auto 20px;
+      background: #fff;
+      padding: 20px;
       h3 {
         text-align: center;
         border-bottom: 1px solid #ccc;

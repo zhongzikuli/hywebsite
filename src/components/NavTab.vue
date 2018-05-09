@@ -1,19 +1,22 @@
 <template>
-  <div class="nav-tab flex">
-    <div class="left">
-      <img src="../images/icon-logo.png" alt="logo">
-    </div>
-    <div class="right">
-      <ul class="flex maxNav">
-        <router-link :to="'/'+nav.path" v-for="(nav,index) in navTabs" :key="index" tag="li" :class="{business:minNav}">
-          {{nav.text}}
-        </router-link>
-      </ul>
-      <ul class="flex minNav" v-if="minNav">
-        <router-link v-for="(childNav, childIndex) in child" :key="childIndex" :to="'/'+childNav.path" tag="li">
-          {{childNav.text}}
-        </router-link>
-      </ul>
+  <div class="wrap">
+    <div class="nav-tab flex">
+      <div class="left">
+        <img src="../images/icon-logo.png" alt="logo">
+      </div>
+      <div class="right">
+        <ul class="flex maxNav">
+          <router-link :to="'/'+nav.path" v-for="(nav,index) in navTabs" :key="index" tag="li"
+                       :class="{business:minNav}">
+            {{nav.text}}
+          </router-link>
+        </ul>
+        <ul class="flex minNav" v-if="minNav">
+          <router-link v-for="(childNav, childIndex) in child" :key="childIndex" :to="'/'+childNav.path" tag="li">
+            {{childNav.text}}
+          </router-link>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -60,12 +63,19 @@
       minNav() {
         let path = ["/business", "/carfinance", "/labcar", "/videoface", "/insurance"];
         return path.some(item => item == this.$route.path);
+      },
+      hr() {
+        let position = this.$route.path.indexOf("/recruit/");
+        console.log(position);
       }
     }
   }
 </script>
 
 <style scoped lang="less">
+  .wrap{
+    background: #fff;
+  }
   .nav-tab {
     width: 75%;
     height: 44px;
@@ -95,6 +105,7 @@
         }
         &.maxNav {
           .business:nth-child(2),
+          .hr,
           .router-link-active {
             background: #239fe8;
             color: #fff;

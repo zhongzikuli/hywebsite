@@ -1,26 +1,29 @@
 <template>
   <div class="main">
-    <div class="top flex">
-      <div class="left">
-        <img src="../images/icon-culture.png" alt="">
-      </div>
-      <div class="right">
-        <p> 能力很重要，可有一样东西比能力更重要，那就是人品。人品，是真正的最高学历，
-          是人能力施展的基础，是当今社会稀缺而珍贵的品质标签。人品和能力，如果左手
-          和右手：单有能力，没有人品，人将残缺不全。人品决定态度，态度决定行为，行
-          为决定着最后的结果。人品意义深远，没有人会愿意信任、重用一个人品欠佳的员工。
-          好人品已成为现代人职业晋升的敬业标杆与成功人生的坚实基础。</p>
-      </div>
-    </div>
     <div class="content">
-      <div v-for="(item,index) in textArr" :key="index" class="item">
-        <h5>{{item.h5}}</h5>
-        <p>{{item.p}}</p>
+      <div class="top flex">
+        <div class="left">
+          <img src="../images/icon-culture.png" alt="">
+        </div>
+        <div class="right">
+          <p> 能力很重要，可有一样东西比能力更重要，那就是人品。人品，是真正的最高学历，
+            是人能力施展的基础，是当今社会稀缺而珍贵的品质标签。人品和能力，如果左手
+            和右手：单有能力，没有人品，人将残缺不全。人品决定态度，态度决定行为，行
+            为决定着最后的结果。人品意义深远，没有人会愿意信任、重用一个人品欠佳的员工。
+            好人品已成为现代人职业晋升的敬业标杆与成功人生的坚实基础。</p>
+        </div>
+      </div>
+      <div class="mid">
+        <div v-for="(item,index) in textArr" :key="index" class="item">
+          <h5>{{item.h5}}</h5>
+          <p>{{item.p}}</p>
+        </div>
       </div>
     </div>
     <Foot></Foot>
     <div class="copy"><span>备案号：浙ICP备15031191号</span>
-      <span>浙公网安备：335214586005924524号</span></div>
+      <span>浙公网安备：335214586005924524号</span>
+    </div>
   </div>
 </template>
 
@@ -80,37 +83,59 @@
 </script>
 
 <style scoped lang="less">
-  .top,
-  .content {
-    width: 1056px;
-    margin: 15px auto 20px;
-    color: #757575;
-    left {
-      img {
-        width: 530px;
-        height: 280px;
+  .main {
+    .content {
+      width: 1056px;
+      margin: 15px auto 20px;
+      max-width: 75%;
+      justify-content: space-between;
+      background: #fff;
+      .top {
+        padding: 20px;
+        .left {
+          img {
+            width: 530px;
+            height: 280px;
+          }
+        }
+        .right {
+          flex: 1;
+          padding-left: 50px;
+          p {
+            text-indent: 2em;
+            font-size: 14px;
+            line-height: 35px;
+          }
+        }
+        @media screen {
+          @media (max-width: 1260px) {
+            .left {
+              img {
+                width: 480px;
+                height: 265px;
+              }
+            }
+            .right {
+              padding-left: 30px;
+              P {
+                line-height: 25px;
+              }
+            }
+          }
+        }
       }
-    }
-    .right {
-      flex: 1;
-      padding-left: 50px;
-      p {
-        text-indent: 2em;
-        font-size: 14px;
-        line-height: 35px;
-      }
-    }
-  }
-
-  .content {
-    .item {
-      margin-top: 15px;
-      h5 {
-        font-size: 16px;
-      }
-      p {
-        line-height: 25px;
-        font-size: 14px;
+      .mid {
+        padding: 20px;
+        .item {
+          margin-top: 15px;
+          h5 {
+            font-size: 16px;
+          }
+          p {
+            line-height: 25px;
+            font-size: 14px;
+          }
+        }
       }
     }
   }

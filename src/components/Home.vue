@@ -177,6 +177,7 @@
       .top-about {
         color: #000;
         width: 1056px;
+		max-width: 75%;
         margin: 0 auto;
         background: #fff;
         padding: 20px;
