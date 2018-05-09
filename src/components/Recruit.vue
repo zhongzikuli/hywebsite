@@ -27,10 +27,15 @@
       this.loadDetail();
     },
     methods: {
-      async loadDetail() {
+      loadDetail() {
         let list = require("../../mock/index");
-        let id = this.$route.params.id;
+        let id = parseInt(this.$route.params.id);
         this.detail = list.find(it => it.id === id)
+      }
+    },
+    watch: {
+      $route() {//只要路径变化，重新获取数据
+        this.loadDetail();
       }
     }
   }
