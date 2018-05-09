@@ -98,7 +98,7 @@
       closeDialog(flag) {
         this.dialog.isShow = flag;
       },
-      scroll(e) {
+      scroll() {
         this.a = document.body.scrollHeight || document.documentElement.scrollHeight;
         this.b = document.body.scrollTop || document.documentElement.scrollTop;
         this.c = document.documentElement.clientHeight;
@@ -106,7 +106,7 @@
         if (this.b + this.c + 10 >= this.a) {
           setTimeout(() => {
             this.page = false
-          }, 800)
+          }, 1500)
         }
       }
     }

@@ -101,7 +101,7 @@
 <style scoped lang="less">
   .main {
     .content1 {
-      background: url("../images/bg-labCar.png") no-repeat;
+      background: url("../images/bg-labCar.jpg") no-repeat;
       .lab-car {
         h2 {
           font-size: 34px;

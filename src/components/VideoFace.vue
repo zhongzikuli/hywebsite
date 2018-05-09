@@ -63,10 +63,16 @@
       color: #fff;
       .video {
         width: 450px;
-        margin-top: 200px;
+        margin-top: 180px;
         text-align: left;
+        margin-left: 130px;
         h3 {
-
+          font-size: 30px;
+        }
+        p{
+          font-size: 16px;
+          line-height: 30px;
+          margin-top: 20px;
         }
       }
       h5 {

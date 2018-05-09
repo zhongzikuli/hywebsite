@@ -25,7 +25,7 @@
 <style scoped lang="less">
   .main {
     .content {
-      background: url("../images/bg-insurance.png") no-repeat;
+      background: url("../images/bg-insurance.jpg") no-repeat;
       background-size: 100% 100%;
       filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='bg-login.png', sizingMethod='scale');
       width: 100%;
