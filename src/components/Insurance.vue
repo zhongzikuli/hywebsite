@@ -29,6 +29,8 @@
       background-size: 100% 100%;
       filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='bg-login.png', sizingMethod='scale');
       width: 100%;
+      min-width: 1096px;
+      min-height: 600px;
       height: calc(~"100% - 90px");
       position: absolute;
       top: 100px;

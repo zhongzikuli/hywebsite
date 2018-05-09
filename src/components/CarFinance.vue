@@ -125,17 +125,18 @@
       width: 100%;
       position: absolute;
       top: 100px;
+      min-width: 1096px;
+      min-height: 600px;
       background-size: 100% 100%;
       text-align: center;
       color: #fff;
       height: calc(~"100% - 90px");
       filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='bg-login.png', sizingMethod='scale');
       .item-content {
-        padding-top: 100px;
-        width: 75%;
-        min-width: 1096px;
+        width: 1056px;
+        margin: 100px auto 20px;
+        max-width: 75%;
         height: 450px;
-        margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;

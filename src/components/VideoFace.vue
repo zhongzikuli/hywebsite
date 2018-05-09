@@ -8,6 +8,10 @@
     </template>
     <template v-else>
       <div class="content content2">
+        <div class="video">
+          <h3>视频面签</h3>
+          <p>客户证件、资产、流水、家访照、合同等相关资料，银行对客户的实时视频面签</p>
+        </div>
       </div>
     </template>
   </div>
@@ -53,8 +57,18 @@
       height: calc(~"100% - 90px");
       position: absolute;
       top: 100px;
+      min-width: 1096px;
+      min-height: 600px;
       text-align: center;
       color: #fff;
+      .video {
+        width: 450px;
+        margin-top: 200px;
+        text-align: left;
+        h3 {
+
+        }
+      }
       h5 {
         margin-top: 60px;
         font-size: 28px;

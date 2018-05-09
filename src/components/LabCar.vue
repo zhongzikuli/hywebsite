@@ -208,6 +208,8 @@
       height: calc(~"100% - 90px");
       position: absolute;
       top: 100px;
+      min-width: 1096px;
+      min-height: 600px;
       text-align: center;
       color: #fff;
       .lab-car {
