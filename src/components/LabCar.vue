@@ -83,12 +83,8 @@
     },
     mounted() {
       window.addEventListener('scroll', this.scroll);
-      window.addEventListener("resize", this.resize);
     },
     methods: {
-      resize() {
-
-      },
       scroll() {
         this.a = document.body.scrollHeight || document.documentElement.scrollHeight;
         this.b = document.body.scrollTop || document.documentElement.scrollTop;
@@ -106,7 +102,6 @@
   .main {
     .content1 {
       background: url("../images/bg-labCar.png") no-repeat;
-
       .lab-car {
         h2 {
           font-size: 34px;

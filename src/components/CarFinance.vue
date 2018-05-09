@@ -89,7 +89,6 @@
     },
     components: {DialogModal},
     mounted() {
-      window.addEventListener("resize", this.resize);
       window.addEventListener('scroll', this.scroll);
     },
     methods: {
@@ -98,9 +97,6 @@
       },
       closeDialog(flag) {
         this.dialog.isShow = flag;
-      },
-      resize() {
-
       },
       scroll(e) {
         this.a = document.body.scrollHeight || document.documentElement.scrollHeight;
@@ -111,8 +107,6 @@
           setTimeout(() => {
             this.page = false
           }, 800)
-        } else {
-          this.page = true
         }
       }
     }

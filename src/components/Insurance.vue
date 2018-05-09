@@ -14,13 +14,7 @@
     data() {
       return {}
     },
-    mounted() {
-      window.addEventListener("resize", this.resize);
-    },
     methods: {
-      resize() {
-
-      },
       go() {
         window.location.href = "http://www.bcisc.cn"
       }

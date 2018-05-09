@@ -23,12 +23,8 @@
     },
     mounted() {
       window.addEventListener('scroll', this.scroll);
-      window.addEventListener("resize", this.resize);
     },
     methods: {
-      resize() {
-
-      },
       scroll() {
         this.a = document.body.scrollHeight || document.documentElement.scrollHeight;
         this.b = document.body.scrollTop || document.documentElement.scrollTop;
