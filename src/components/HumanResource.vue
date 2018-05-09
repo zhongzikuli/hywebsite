@@ -36,7 +36,7 @@
       this.loadData()
     },
     methods: {
-      async loadData() {
+      loadData() {
         this.recruit = require("../../mock/index").reverse();
       }
     }
