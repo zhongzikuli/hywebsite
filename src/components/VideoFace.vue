@@ -30,7 +30,7 @@
         this.b = document.body.scrollTop || document.documentElement.scrollTop;
         this.c = document.documentElement.clientHeight;
         //通过判断滚动条的top位置与可视网页之和与整个网页的高度是否相等来决定是否加载内容；
-        if (this.b + this.c + 50 >= this.a) {
+        if (this.b + this.c + 10 >= this.a) {
           this.page = false
         }
       }

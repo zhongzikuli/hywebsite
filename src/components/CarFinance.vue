@@ -75,7 +75,7 @@
             type: "text"
           }, {
             name: "tel",
-            text: "电话：",
+            text: "手机号码：",
             val: "",
             type: "number"
           }, {

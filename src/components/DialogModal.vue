@@ -12,7 +12,8 @@
             <div class="dialog-item flex" v-for="(item,index) in dialog.solt" :key="index">
               <label :name="item.name" :for="item.name">{{item.text}}</label>
               <template v-if="item.type ==='number'">
-                <input type="text" :id="item.name" v-model.number="item.val" :type="item.type" placeholder="请输入...">
+                <input ref="tel" type="text" :id="item.name" v-model.number="item.val" :type="item.type" @blur="changeVal()"
+                       placeholder="请输入...">
               </template>
               <template v-else>
                 <input type="text" :id="item.name" v-model.trim="item.val" :type="item.type" placeholder="请输入...">
@@ -55,14 +56,24 @@
             this.$toasted.success('信息提交成功！请等待客服的联系', {
               position: "top-center"
             }).goAway(1500);
+          }else{
+
           }
-        }).catch(msg=>{
+        }).catch(msg => {
 
         })
       },
       closeMyself() {
         this.dialog.isShow = false;
         this.$emit('close', false)
+      },
+      changeVal() {
+        let  phoneReg=/^[1][3,4,5,7,8][0-9]{9}$/;
+        if(!phoneReg.test(this.$refs.tel[0].value)){
+          this.$toasted.error("手机号码格式不正确", {
+            position: "top-center"
+          }).goAway(1500)
+        }
       }
     }
   }
@@ -89,7 +100,7 @@
     position: fixed;
     width: 100%;
     height: 100%;
-    z-index:10;
+    z-index: 10;
     .dialog-cover {
       background: #000;
       opacity: .3;
