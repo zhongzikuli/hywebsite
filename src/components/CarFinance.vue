@@ -96,6 +96,11 @@
       padding-bottom: 50px;
       .head {
         background: url("../images/bg-carFinancel.jpg") no-repeat 100%;
+        .head-text{
+          h1{
+            margin: 20px 0 10px;
+          }
+        }
       }
       .body {
         .down {

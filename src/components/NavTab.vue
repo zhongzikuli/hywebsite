@@ -146,7 +146,7 @@
             li {
               margin-right: 0;
               padding: 0;
-              
+
               color: #fff;
             }
           }

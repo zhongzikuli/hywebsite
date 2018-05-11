@@ -65,6 +65,16 @@
                 min-width: 1096px;
                 color: #fff;
                 padding: 60px 0 0;
+                h1{
+                  font-size: 50px;
+                  letter-spacing: 5px;
+                }
+                h3{
+                  font-size: 32px;
+                }
+                h4{
+                  font-size: 20px;
+                }
               }
               .carfinance {
                 h3 {
@@ -90,7 +100,6 @@
               h3 {
                 color: #404040;
                 font-size: 40px;
-
               }
               h4 {
                 font-size: 18px;

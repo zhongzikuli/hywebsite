@@ -146,10 +146,6 @@
         background: url("../images/bg-home.jpg") no-repeat 100% 100%;
         .head-text {
 
-          h1 {
-            font-size: 52px;
-            letter-spacing: 8px;
-          }
           h2 {
             &:last-of-type {
               margin: 50px 0;
@@ -253,7 +249,6 @@
             }
           }
         }
-
       }
       .contact {
         .bottom {

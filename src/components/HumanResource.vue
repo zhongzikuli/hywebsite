@@ -76,10 +76,10 @@
               flex: 1;
             }
             .mid {
-              width: 200px;
+              width: 240px;
             }
             .btn {
-              background: red;
+              background: #239fe8;
               color: #fff;
               padding: 5px;
               margin-top: 10px;
