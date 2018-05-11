@@ -12,7 +12,7 @@
             <div class="dialog-item flex" v-for="(item,index) in dialog.solt" :key="index">
               <label :name="item.name" :for="item.name">{{item.text}}</label>
               <template v-if="item.type ==='number'">
-                <input ref="tel" type="text" :id="item.name" v-model.number="item.val" :type="item.type" @blur="changeVal()"
+                <input ref="tel" type="text" :id="item.name" v-model.number="item.val" @blur="changeVal()"
                        placeholder="请输入...">
               </template>
               <template v-else>
@@ -44,7 +44,7 @@
     },
     methods: {
       async submit() {
-        var params = new URLSearchParams();
+        let params = new URLSearchParams();
         params.append("name", this.dialog.solt[0].val);
         params.append("tel", this.dialog.solt[1].val);
         params.append("companyName", this.dialog.solt[2].val);

@@ -1,7 +1,7 @@
 <template>
   <div class="foot">
-    <div class="content">
-      <div class="top">
+    <div class="wrap">
+      <div class="top text-center">
         <img src="../images/icon-tel.png" alt="">
         <span>0571-89906088</span>
       </div>
@@ -46,12 +46,12 @@
 <style scoped lang="less">
   .foot {
     background: #eee;
-    .content {
+    .wrap {
       width: 1096px;
       margin: 0 auto;
       .top {
         padding: 35px 0;
-        text-align: center;
+
         border-bottom: 1px solid #ccc;
         img {
           vertical-align: text-bottom;
@@ -74,7 +74,6 @@
           .item {
             flex: 1;
             justify-content: space-between;
-
             ul {
               li {
                 line-height: 22px;

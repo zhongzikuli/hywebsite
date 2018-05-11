@@ -50,7 +50,7 @@
       background: #fff;
       padding: 20px;
       h3 {
-        text-align: center;
+       
         border-bottom: 1px solid #ccc;
         height: 50px;
         line-height: 50px;

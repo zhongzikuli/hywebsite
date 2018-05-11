@@ -1,29 +1,29 @@
 <template>
   <div class="main">
-    <div class="top">
-      <div class="top-text">
-        <div class="title-ch">{{titleCh}}</div>
-        <div class="title-en">{{titleEn}}</div>
-        <div class="slogan">{{slogan}}<br>{{sloganTitle}}</div>
-        <div class="btn" @click="showDialog">立即试用<img src="../images/icon-arrowright.png"></div>
-      </div>
-      <div class="top-about">
-        <div class="about-title">关于浩韵</div>
-        <div class="about-text">{{aboutText1}}</div>
-        <div class="about-text">{{aboutText2}}</div>
-        <div class="about-text">{{aboutText3}}</div>
-        <div class="about-text">{{aboutText4}}</div>
-      </div>
-    </div>
     <div class="content">
-      <div class="process">
-        <div class="head">
+      <div class="head">
+        <div class="head-text text-center">
+          <h1>{{titleCh}}</h1>
+          <h2>{{titleEn}}</h2>
+          <h2>{{slogan}}<br>{{sloganTitle}}</h2>
+          <div class="btn" @click="showDialog">立即试用<img src="../images/icon-arrowright.png"></div>
+        </div>
+        <div class="head-about">
+          <h2>关于浩韵</h2>
+          <h4>{{aboutText1}}</h4>
+          <h4>{{aboutText2}}</h4>
+          <h4>{{aboutText3}}</h4>
+          <h4>{{aboutText4}}</h4>
+        </div>
+      </div>
+      <div class="body">
+        <div class="top text-center">
           <h3>+<br>发展历程</h3>
-          <h5>Develoment path</h5>
+          <h4>Develoment path</h4>
         </div>
         <div class="mid">
           <div class="left">
-            <img src="../images/icon-progress-left.png" alt="">
+            <img src="../images/icon-progress-left.png" alt="" class="hy">
           </div>
           <div class="right">
             <h5>2018-未来</h5>
@@ -42,9 +42,9 @@
         </div>
       </div>
       <div class="contact">
-        <div class="head">
+        <div class="top text-center">
           <h3>+<br>联系我们</h3>
-          <h5>Contact us</h5>
+          <h4>Contact us</h4>
         </div>
         <div class="bottom flex">
           <div class="left">
@@ -63,8 +63,6 @@
       </div>
     </div>
     <Foot></Foot>
-    <div class="copy"><span>备案号：浙ICP备15031191号</span>
-      <span>浙公网安备：335214586005924524号</span></div>
     <DialogModal :dialog="dialog" @close="closeDialog"></DialogModal>
   </div>
 </template>
@@ -143,164 +141,135 @@
 
 <style scoped lang="less">
   .main {
-    background: #fff;
-    .top {
-      height: 600px;
-      background: url("../images/bg-home.jpg") 100% 100%;
-      color: #fff;
-      .top-text {
-        text-align: center;
-        padding: 100px 0 50px;
-        .title-ch {
-          font-size: 66px;
-        }
-        .title-en {
-          font-size: 30px;
-        }
-        .slogan {
-          margin: 50px 0;
-          line-height: 40px;
-          font-size: 26px;
-        }
-        .btn {
-          cursor: pointer;
-          font-size: 26px;
-          border: 1px solid #fff;
-          padding: 5px 10px;
-          width: 150px;
-          line-height: 34px;
-          margin: 0 auto;
-          img {
-            margin-left: 5px;
-          }
-        }
-      }
-      .top-about {
-        color: #000;
-        width: 1056px;
-        max-width: 75%;
-        margin: 0 auto;
-        background: #fff;
-        padding: 20px;
-        box-shadow: 0 0 4px 4px #e3e3e3;
-        .about-title {
-          text-align: center;
-          font-size: 20px;
-          font-weight: 500;
-          margin-bottom: 15px;
-        }
-        .about-text {
-          text-indent: 2em;
-        }
-      }
-    }
     .content {
-      width: 1096px;
-      margin: 220px auto 50px;
-      .contact {
-        margin-top: 100px;
-      }
       .head {
-        text-align: center;
-        h3 {
-          color: #404040;
-          font-size: 40px;
-        }
-        h5 {
-          font-size: 18px;
-          color: #757575;
-        }
-      }
-      .mid {
-        margin-top: 50px;
-        .left {
-          width: 400px;
-          height: 250px;
-          z-index: 100;
-          float: left;
-          margin-top: 25px;
-          background: red;
-          img {
-            margin-left: 100px;
-            width: 200px;
-            height: 150px;
-            margin-top: 50px;
+        background: url("../images/bg-home.jpg") no-repeat 100% 100%;
+        .head-text {
+
+          h1 {
+            font-size: 52px;
+            letter-spacing: 8px;
           }
-        }
-        .right {
-          width: 540px;
-          height: 140px;
-          background: #000;
-          margin-left: 320px;
-          color: #fff;
-          padding: 80px 120px;
-          line-height: 40px;
-          h5 {
-            font-size: 20px;
-          }
-          p {
-            font-size: 14px;
+          h2 {
             &:last-of-type {
-              line-height: 140px;
+              margin: 50px 0;
+              line-height: 40px;
+            }
+          }
+          .btn {
+            cursor: pointer;
+            font-size: 26px;
+            border: 1px solid #fff;
+            padding: 5px 10px;
+            width: 150px;
+            line-height: 34px;
+            margin: 0 auto;
+            img {
+              margin-left: 5px;
             }
           }
         }
-      }
-      .down {
-        width: 100%;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        .item {
-          width: 50%;
-          margin-top: 80px;
-          .left {
-            width: 80px;
-            height: 80px;
-            background: #ccc;
+        .head-about {
+          color: #757575;
+          margin: 100px auto;
+          width: 70%;
+          min-width: 1052px;
+          background: #fff;
+          padding: 20px;
+          box-shadow: 0 0 4px 4px #e3e3e3;
+          h2 {
+            color: #404040;
             text-align: center;
-            line-height: 40px;
             font-size: 20px;
+            margin-bottom: 15px;
+          }
+          h4 {
+            text-indent: 2em;
+          }
+        }
+      }
+      .body {
+        .mid {
+          margin-top: 50px;
+          .left {
+            width: 400px;
+            height: 250px;
+            z-index: 100;
+            float: left;
+            margin-top: 25px;
+            background: red;
+            img.hy {
+              margin-left: 100px;
+              width: 200px;
+              height: 150px;
+              margin-top: 50px;
+            }
           }
           .right {
-            flex: 1;
-            margin-left: 30px;
+            height: 140px;
+            background: #000;
+            margin-left: 320px;
+            color: #fff;
+            padding: 80px 120px;
+            line-height: 40px;
             h5 {
-              color: #404040;
-              font-size: 16px;
-              line-height: 28px;
+              font-size: 22px;
             }
             p {
-              color: #757575;
-              font-size: 14px;
+              font-size: 16px;
+              &:last-of-type {
+                line-height: 140px;
+                font-size: 28px;
+              }
             }
           }
         }
-      }
-      .bottom {
-        margin-top: 50px;
-        .left {
-          img {
-            width: 530px;
-            height: 280px;
+        .down {
+          justify-content: space-between;
+          flex-wrap: wrap;
+          .item {
+            width: 50%;
+            margin-top: 80px;
+            .left {
+              width: 80px;
+              height: 80px;
+              background: #ccc;
+              text-align: center;
+              line-height: 40px;
+              font-size: 20px;
+            }
+            .right {
+              flex: 1;
+              margin-left: 30px;
+              h5 {
+                color: #404040;
+                font-size: 20px;
+                line-height: 28px;
+              }
+              p {
+                color: #757575;
+                font-size: 15px;
+              }
+            }
           }
         }
-        .right {
-          flex: 1;
-          padding-left: 50px;
-          h5 {
-            color: #404040;
-            font-size: 16px;
-            line-height: 28px;
+
+      }
+      .contact {
+        .bottom {
+          .left {
+            img {
+              width: 530px;
+              height: 280px;
+            }
           }
-          p {
-            margin-top: 15px;
-            color: #757575;
-            font-size: 14px;
-            line-height: 22px;
-            &:last-of-type {
-              line-height: 140px;
-              font-size: 28px;
-              margin-top: 0;
+          .right {
+            p {
+              &:last-of-type {
+                line-height: 140px;
+                font-size: 28px;
+                margin-top: 0;
+              }
             }
           }
         }

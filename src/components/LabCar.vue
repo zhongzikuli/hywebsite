@@ -220,7 +220,7 @@
       top: 100px;
       min-width: 1096px;
       min-height: 600px;
-      text-align: center;
+     
       color: #fff;
       .lab-car {
         width: 75%;

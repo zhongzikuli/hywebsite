@@ -34,7 +34,7 @@
       height: calc(~"100% - 90px");
       position: absolute;
       top: 100px;
-      text-align: center;
+      
       color: #fff;
       h5 {
         margin-top: 60px;
