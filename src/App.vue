@@ -26,7 +26,6 @@
     margin: 0;
     padding: 0;
   }
-
   html {
     height: 100%;
     body {
@@ -56,9 +55,8 @@
           flex: 1;
           .content {
             width: 100%;
-
             .head {
-              height: 600px;
+              height: 700px;
               .head-text {
                 margin: 0 auto;
                 width: 70%;
@@ -93,7 +91,6 @@
             .body{
               width: 70%;
               min-width: 1096px;
-              margin: 200px auto 0;
             }
             .body .top,
             .contact .top {
@@ -104,17 +101,15 @@
               h4 {
                 font-size: 18px;
                 color: #757575;
-
               }
             }
             .contact {
               width: 70%;
-              min-width: 1056px;
-              margin: 80px auto 0;
-              padding: 20px;
+              min-width: 1096px;
+              margin: 80px auto 20px;
+             // padding: 20px;
               .bottom {
                 margin-top: 50px;
-
                 .right {
                   flex: 1;
                   padding-left: 50px;

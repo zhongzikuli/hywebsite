@@ -4,14 +4,15 @@
       <div class="left"><img src="../images/icon-logo.png" alt="logo"></div>
       <div class="right">
         <ul class="flex maxnav">
-          <router-link v-for="(nav,index) in navTabs" :key="index" :to="{path:nav.path}" :class="{business:dropdown}"
+          <router-link v-for="(nav,index) in navTabs" :key="index" :to="'/'+nav.path"
+                       :class="{business:dropdown,recruit:recruitId}"
                        @mouseenter.native="hover(index)" @mouseout.native="leave()"
                        tag="li">
             {{nav.text}}
           </router-link>
         </ul>
         <ul class="minnav text-center" v-if="dropdownActive">
-          <router-link v-for="(childNav, childIndex) in child" :key="childIndex" :to="{path:childNav.path}"
+          <router-link v-for="(childNav, childIndex) in child" :key="childIndex" :to="'/'+childNav.path"
                        @mouseenter.native="hover(childIndex+6)" @mouseout.native="leave()" tag="li">
             {{childNav.text}}
           </router-link>
@@ -84,6 +85,10 @@
       dropdown() {
         let path = ["/business", "/carfinance", "/labcar", "/videoface", "/insurance"];
         return path.some(item => item == this.$route.path);
+      },
+      recruitId() {
+        let path = ["/recruit"];
+        return path.some(item => item == this.$route.path.slice(0, 8));
       }
     }
   }
@@ -122,6 +127,7 @@
           }
           &.maxnav {
             .business:nth-child(2),
+            .recruit:nth-child(5),
             .router-link-active {
               background: #239fe8;
               color: #fff;
@@ -142,7 +148,6 @@
                 color: #239fe8;
               }
             }
-
           }
         }
       }

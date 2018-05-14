@@ -41,7 +41,7 @@
             padding: 2px 0 5px;
             color: #fff;
             width: 150px;
-            margin: 200px auto 0;
+            margin: 300px auto 0;
             border-radius: 5px;
             border: 1px solid #239fe8;
             outline: none;
