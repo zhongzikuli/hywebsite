@@ -4,16 +4,17 @@
       <div class="left"><img src="../images/icon-logo.png" alt="logo"></div>
       <div class="right">
         <ul class="flex maxnav">
-          <li v-for="(nav,index) in navTabs" :class="{business:dropdown,active: index == nowIndex}"
-              @mouseenter="hover(index)" @mouseleave="leave()" @click="tabToggle(index)">
+          <router-link v-for="(nav,index) in navTabs" :key="index" :to="{path:nav.path}" :class="{business:dropdown}"
+                       @mouseenter.native="hover(index)" @mouseout.native="leave()"
+                       tag="li">
             {{nav.text}}
-          </li>
+          </router-link>
         </ul>
-        <ul class="minnav" v-if="dropdownActive">
-          <li v-for="(childNav, childIndex) in child" @click="tabToggle(childIndex+6)"
-              @mouseenter="hover(childIndex+6)" @mouseleave="leave()">
+        <ul class="minnav text-center" v-if="dropdownActive">
+          <router-link v-for="(childNav, childIndex) in child" :key="childIndex" :to="{path:childNav.path}"
+                       @mouseenter.native="hover(childIndex+6)" @mouseout.native="leave()" tag="li">
             {{childNav.text}}
-          </li>
+          </router-link>
         </ul>
       </div>
     </div>
@@ -25,8 +26,6 @@
     data() {
       return {
         dropdownActive: false,
-        nowIndex: 0,
-        it: 0,
         navTabs: [{
           text: "首页",
           page: 0,
@@ -71,22 +70,10 @@
         }]
       }
     },
-    mounted() {
-
-    },
     methods: {
-      tabToggle(index) {
-        this.nowIndex = index;
-        if (index < 6) {
-          this.it = this.navTabs.find(item => item.page == index);
-        } else {
-          this.it = this.child.find(item => item.page == index);
-        }
-        window.location.href = '#/' + this.it.path;
-      },
       hover(index) {
         if (index == 1 || index >= 6) {
-          this.dropdownActive = true
+          this.dropdownActive = true;
         }
       },
       leave() {
@@ -135,20 +122,27 @@
           }
           &.maxnav {
             .business:nth-child(2),
-            .active {
+            .router-link-active {
               background: #239fe8;
               color: #fff;
             }
           }
           &.minnav {
-            width: 112px;
-            margin-left: 64px;
+            width: 96px;
+            background: #239fe8;
+            color: #fff;
+            margin-left: 72px;
             li {
               margin-right: 0;
               padding: 0;
-
               color: #fff;
+              font-size: 18px;
+              &.router-link-active {
+                background: #fff;
+                color: #239fe8;
+              }
             }
+
           }
         }
       }

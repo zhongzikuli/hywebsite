@@ -3,7 +3,7 @@
     <div class="content">
       <h5>浩韵控股集团业务</h5>
       <h1>宝诚保险，多重保障更无忧</h1>
-      <div class="btn" @click="go"><img src="../images/icon-net.png"><span>宝诚官网</span></div>
+      <a class="btn text-center" href="http://www.bcisc.cn" target="_blank"><img src="../images/icon-net.png"><span>宝诚官网</span></a>
     </div>
   </div>
 </template>
@@ -13,11 +13,6 @@
     name: "insurance",
     data() {
       return {}
-    },
-    methods: {
-      go() {
-        window.location.href = "http://www.bcisc.cn"
-      }
     }
   }
 </script>
@@ -34,7 +29,7 @@
       height: calc(~"100% - 90px");
       position: absolute;
       top: 100px;
-      
+
       color: #fff;
       h5 {
         margin-top: 60px;
@@ -47,9 +42,9 @@
         margin-top: 50px;
       }
       .btn {
+        text-decoration: none;
         position: absolute;
         bottom: 100px;
-        cursor: pointer;
         left: 50%;
         margin-left: -80px;
         font-size: 20px;
@@ -60,7 +55,6 @@
         border-radius: 5px;
         border: 1px solid #239fe8;
         outline: none;
-        z-index: 9;
         background: #239fe8;
         img {
           margin-top: 4px;
