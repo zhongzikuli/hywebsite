@@ -58,17 +58,14 @@
           this.$toasted.error('姓名不能为空', {
             position: "top-center"
           }).goAway(2000);
-          return
         } else if (this.tel == null || this.tel == "" || this.tel == undefined) {
           this.$toasted.error('手机号码不能为空', {
             position: "top-center"
           }).goAway(2000);
-          return
         } else if (this.companyName == "") {
           this.$toasted.error('公司名称不能为空', {
             position: "top-center"
           }).goAway(2000);
-          return
         } else {
           let params = new URLSearchParams();
           params.append("name", this.name);
@@ -106,7 +103,6 @@
     }
   }
 </script>
-
 
 <style scoped lang="less">
   .drop-enter-active {
