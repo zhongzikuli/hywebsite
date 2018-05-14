@@ -26,21 +26,26 @@
     margin: 0;
     padding: 0;
   }
+
   html {
     height: 100%;
     body {
       overflow: scroll;
       height: 100%;
+      .toasted {
+        top: 300px !important;
+      }
       #app {
         min-width: 1056px;
         min-height: 100%;
         display: flex;
         flex-direction: column;
         background: #f5f5f5;
+
         .flex {
           display: flex;
         }
-        .text-center{
+        .text-center {
           text-align: center;
         }
         ul {
@@ -63,14 +68,14 @@
                 min-width: 1096px;
                 color: #fff;
                 padding: 60px 0 0;
-                h1{
+                h1 {
                   font-size: 50px;
                   letter-spacing: 5px;
                 }
-                h3{
+                h3 {
                   font-size: 32px;
                 }
-                h4{
+                h4 {
                   font-size: 20px;
                 }
               }
@@ -88,7 +93,7 @@
                 }
               }
             }
-            .body{
+            .body {
               width: 70%;
               min-width: 1096px;
             }
@@ -107,7 +112,7 @@
               width: 70%;
               min-width: 1096px;
               margin: 80px auto 20px;
-             // padding: 20px;
+              // padding: 20px;
               .bottom {
                 margin-top: 50px;
                 .right {

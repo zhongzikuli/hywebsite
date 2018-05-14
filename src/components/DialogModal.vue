@@ -5,23 +5,25 @@
       <div class="dialog-content" v-if="dialog.isShow">
         <form>
           <div class="dialog-head flex">
-            <span>{{dialog.head}}</span>
+            <span>注册浩韵会员</span>
             <span class="dialog-close" @click="closeMyself">x</span>
           </div>
           <div class="dialog-body">
-            <div class="dialog-item flex" v-for="(item,index) in dialog.solt" :key="index">
-              <label :name="item.name" :for="item.name">{{item.text}}</label>
-              <template v-if="item.type ==='number'">
-                <input ref="tel" type="text" :id="item.name" v-model.number="item.val" @blur="changeVal()"
-                       placeholder="请输入...">
-              </template>
-              <template v-else>
-                <input type="text" :id="item.name" v-model.trim="item.val" :type="item.type" placeholder="请输入...">
-              </template>
+            <div class="dialog-item flex">
+              <label name="name" for="name">姓名：</label>
+              <input type="text" id="name" v-model.trim="name" ref="name" placeholder="请输入姓名">
+            </div>
+            <div class="dialog-item flex">
+              <label name="tel" for="tel">手机号码：</label>
+              <input type="text" id="tel" v-model.number="tel" ref="tel" placeholder="请输入正确的手机号码">
+            </div>
+            <div class="dialog-item flex">
+              <label name="companyName" for="companyName">公司名称：</label>
+              <input type="text" id="companyName" v-model.trim="companyName" ref="companyName" placeholder="请输入公司名称">
             </div>
           </div>
           <div class="dialog-foot flex">
-            <button class="btn-confirm" @submit.prevent="submit">确定提交</button>
+            <button class="btn-confirm" @click="submit" :disabled="flag">确定提交</button>
             <button class="btn-cancel" @click="closeMyself">取消</button>
           </div>
         </form>
@@ -29,12 +31,16 @@
     </transition>
   </div>
 </template>
-
 <script>
   export default {
     name: "dialog-modal",
     data() {
-      return {}
+      return {
+        flag: false,
+        name: "",
+        tel: null,
+        companyName: ""
+      }
     },
     props: {
       dialog: {
@@ -43,21 +49,29 @@
       }
     },
     methods: {
-      async submit() {
-        let params = new URLSearchParams();
-        params.append("name", this.dialog.solt[0].val);
-        params.append("tel", this.dialog.solt[1].val);
-        params.append("companyName", this.dialog.solt[2].val);
 
+      async submit() {
+        this.flag = true;
+        setTimeout(() => {
+          this.flag = false
+        }, 2000);
+        let params = new URLSearchParams();
+        params.append("name", this.name);
+        params.append("tel", this.tel);
+        params.append("companyName", this.companyName);
         let url = "http://192.168.0.213:8088/interface-web/sale/insert";
+        // let url = "http://183.134.110.234:18080/interface-web/sale/insert";
         await this.$axios.post(url, params).then(res => {
           if (res.status == 200 && res.data.error == 1) {
             this.dialog.isShow = false;
             this.$toasted.success('信息提交成功！请等待客服的联系', {
               position: "top-center"
-            }).goAway(1500);
+            }).goAway(2000);
           } else {
-
+            this.$toasted.error(res.data.message, {
+              position: "top-center",
+              className: "error"
+            }).goAway(2000);
           }
         }).catch(msg => {
 
@@ -66,18 +80,11 @@
       closeMyself() {
         this.dialog.isShow = false;
         this.$emit('close', false)
-      },
-      changeVal() {
-        let phoneReg = /^[1][3,4,5,7,8][0-9]{9}$/;
-        if (!phoneReg.test(this.$refs.tel[0].value)) {
-          this.$toasted.error("手机号码格式不正确", {
-            position: "top-center"
-          }).goAway(1500)
-        }
       }
     }
   }
 </script>
+
 
 <style scoped lang="less">
   .drop-enter-active {
@@ -115,7 +122,7 @@
       width: 400px;
       position: fixed;
       background: #fff;
-      top: 200px;
+      top: 300px;
       left: 50%;
       margin-left: -200px;
       z-index: 10;

@@ -76,24 +76,7 @@
     data() {
       return {
         dialog: {
-          isShow: false,
-          head: "注册浩韵会员",
-          solt: [{
-            name: "name",
-            text: "姓名：",
-            val: "",
-            type: "text"
-          }, {
-            name: "tel",
-            text: "手机号码：",
-            val: "",
-            type: "number"
-          }, {
-            name: "companyName",
-            text: "公司名称：",
-            val: "",
-            type: "text"
-          }]
+          isShow: false
         },
         titleCh: "浩韵汽车金融业务系统全新上线",
         titleEn: "The Auto Financial Systerm Of Hao Yun launched",
