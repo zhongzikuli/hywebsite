@@ -93,7 +93,6 @@
 <style scoped lang="less">
   .main {
     .content {
-      padding-bottom: 50px;
       background: #fff;
       .head {
         background: url("../images/bg-carFinancel.jpg") no-repeat 100%;
@@ -104,6 +103,8 @@
         }
       }
       .body {
+        padding-bottom: 50px;
+        margin: 70px auto 0;
         .down {
           justify-content: space-between;
           flex-wrap: wrap;

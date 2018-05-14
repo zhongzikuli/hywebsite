@@ -56,7 +56,7 @@
             this.$toasted.success('信息提交成功！请等待客服的联系', {
               position: "top-center"
             }).goAway(1500);
-          }else{
+          } else {
 
           }
         }).catch(msg => {
@@ -68,8 +68,8 @@
         this.$emit('close', false)
       },
       changeVal() {
-        let  phoneReg=/^[1][3,4,5,7,8][0-9]{9}$/;
-        if(!phoneReg.test(this.$refs.tel[0].value)){
+        let phoneReg = /^[1][3,4,5,7,8][0-9]{9}$/;
+        if (!phoneReg.test(this.$refs.tel[0].value)) {
           this.$toasted.error("手机号码格式不正确", {
             position: "top-center"
           }).goAway(1500)

@@ -87,6 +87,7 @@
         }
       }
       .body {
+        margin: 70px auto 0;
         .down {
           justify-content: space-between;
           margin-top: 50px;

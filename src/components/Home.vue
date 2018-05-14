@@ -185,6 +185,7 @@
         }
       }
       .body {
+        margin: 200px auto 0;
         .mid {
           margin-top: 50px;
           .left {
