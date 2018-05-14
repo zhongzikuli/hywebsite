@@ -117,7 +117,7 @@
                 margin-top: 50px;
                 .right {
                   flex: 1;
-                  padding-left: 50px;
+                  padding-left: 25px;
                   h5 {
                     color: #404040;
                     font-size: 22px;

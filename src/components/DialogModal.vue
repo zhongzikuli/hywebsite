@@ -58,14 +58,17 @@
           this.$toasted.error('姓名不能为空', {
             position: "top-center"
           }).goAway(2000);
+          return
         } else if (this.tel == null || this.tel == "" || this.tel == undefined) {
           this.$toasted.error('手机号码不能为空', {
             position: "top-center"
           }).goAway(2000);
+          return
         } else if (this.companyName == "") {
           this.$toasted.error('公司名称不能为空', {
             position: "top-center"
           }).goAway(2000);
+          return
         } else {
           let params = new URLSearchParams();
           params.append("name", this.name);
@@ -76,6 +79,9 @@
           await this.$axios.post(url, params).then(res => {
             if (res.status == 200 && res.data.error == 1) {
               this.dialog.isShow = false;
+              this.name="";
+              this.tel="";
+              this.companyName="";
               this.$toasted.success('信息提交成功！请等待客服的联系', {
                 position: "top-center"
               }).goAway(2000);
@@ -92,6 +98,9 @@
       },
       closeMyself() {
         this.dialog.isShow = false;
+        this.name="";
+        this.tel="";
+        this.companyName="";
         this.$emit('close', false)
       }
     }
