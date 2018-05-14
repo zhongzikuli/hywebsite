@@ -96,9 +96,22 @@
       background: #fff;
       .head {
         background: url("../images/bg-carFinancel.jpg") no-repeat 100%;
-        .head-text{
-          h1{
+        .head-text {
+          h1 {
             margin: 20px 0 10px;
+          }
+        }
+      }
+      .contact {
+        .bottom{
+          .left {
+            width: 49%;
+            text-align: right;
+            padding-right: 25px;
+            img {
+              width: 530px;
+              height: 280px;
+            }
           }
         }
       }

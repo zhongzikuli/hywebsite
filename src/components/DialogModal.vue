@@ -11,15 +11,15 @@
           <div class="dialog-body">
             <div class="dialog-item flex">
               <label name="name" for="name">姓名：</label>
-              <input type="text" id="name" v-model.trim="name" ref="name" placeholder="请输入姓名">
+              <input type="text" id="name" v-model.trim="name" placeholder="请输入姓名">
             </div>
             <div class="dialog-item flex">
               <label name="tel" for="tel">手机号码：</label>
-              <input type="text" id="tel" v-model.number="tel" ref="tel" placeholder="请输入正确的手机号码">
+              <input type="text" id="tel" v-model.number="tel" placeholder="请输入正确的手机号码">
             </div>
             <div class="dialog-item flex">
               <label name="companyName" for="companyName">公司名称：</label>
-              <input type="text" id="companyName" v-model.trim="companyName" ref="companyName" placeholder="请输入公司名称">
+              <input type="text" id="companyName" v-model.trim="companyName" placeholder="请输入公司名称">
             </div>
           </div>
           <div class="dialog-foot flex">
@@ -58,17 +58,14 @@
           this.$toasted.error('姓名不能为空', {
             position: "top-center"
           }).goAway(2000);
-          return
         } else if (this.tel == null || this.tel == "" || this.tel == undefined) {
           this.$toasted.error('手机号码不能为空', {
             position: "top-center"
           }).goAway(2000);
-          return
         } else if (this.companyName == "") {
           this.$toasted.error('公司名称不能为空', {
             position: "top-center"
           }).goAway(2000);
-          return
         } else {
           let params = new URLSearchParams();
           params.append("name", this.name);

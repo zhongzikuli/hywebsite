@@ -151,6 +151,19 @@
           }
         }
       }
+      .contact {
+        .bottom {
+          .left {
+            width: 49%;
+            text-align: right;
+            padding-right: 25px;
+            img {
+              width: 530px;
+              height: 280px;
+            }
+          }
+        }
+      }
       .body {
         margin: 70px auto 0;
         .down {

@@ -77,11 +77,14 @@
         }
       }
       .contact {
-        .bottom {
+        .bottom{
           .left {
+            width: 49%;
+            text-align: right;
+            padding-right: 25px;
             img {
-              width: 427px;
-              height: 300px;
+              width: 530px;
+              height: 280px;
             }
           }
         }
