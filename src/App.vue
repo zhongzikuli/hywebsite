@@ -56,7 +56,7 @@
           flex: 1;
           .content {
             width: 100%;
-            background: #fff;
+
             .head {
               height: 600px;
               .head-text {

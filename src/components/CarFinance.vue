@@ -94,6 +94,7 @@
   .main {
     .content {
       padding-bottom: 50px;
+      background: #fff;
       .head {
         background: url("../images/bg-carFinancel.jpg") no-repeat 100%;
         .head-text{

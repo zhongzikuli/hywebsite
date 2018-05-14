@@ -145,7 +145,6 @@
       .head {
         background: url("../images/bg-home.jpg") no-repeat 100% 100%;
         .head-text {
-
           h2 {
             &:last-of-type {
               margin: 50px 0;
@@ -169,11 +168,11 @@
           color: #757575;
           margin: 100px auto;
           width: 70%;
-          min-width: 1052px;
+          min-width: 1096px;
           background: #fff;
-          padding: 20px;
           box-shadow: 0 0 4px 4px #e3e3e3;
           h2 {
+            padding: 20px 20px 0;
             color: #404040;
             text-align: center;
             font-size: 20px;
@@ -181,6 +180,7 @@
           }
           h4 {
             text-indent: 2em;
+            padding: 0 20px 20px;
           }
         }
       }

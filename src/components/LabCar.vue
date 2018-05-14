@@ -97,6 +97,8 @@
 <style scoped lang="less">
   .main {
     .content {
+      background: #fff;
+      padding-bottom: 50px;
       .head {
         background: url("../images/bg-labCar.jpg") no-repeat 100%;
         .head-text {

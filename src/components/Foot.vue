@@ -47,11 +47,12 @@
   .foot {
     background: #eee;
     .wrap {
-      width: 1096px;
+      width: 70%;
+      min-width: 1056px;
       margin: 0 auto;
+      padding: 20px;
       .top {
         padding: 35px 0;
-
         border-bottom: 1px solid #ccc;
         img {
           vertical-align: text-bottom;
