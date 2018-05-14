@@ -49,33 +49,49 @@
       }
     },
     methods: {
-
       async submit() {
         this.flag = true;
         setTimeout(() => {
           this.flag = false
         }, 2000);
-        let params = new URLSearchParams();
-        params.append("name", this.name);
-        params.append("tel", this.tel);
-        params.append("companyName", this.companyName);
-        let url = "http://192.168.0.213:8088/interface-web/sale/insert";
-        // let url = "http://183.134.110.234:18080/interface-web/sale/insert";
-        await this.$axios.post(url, params).then(res => {
-          if (res.status == 200 && res.data.error == 1) {
-            this.dialog.isShow = false;
-            this.$toasted.success('信息提交成功！请等待客服的联系', {
-              position: "top-center"
-            }).goAway(2000);
-          } else {
-            this.$toasted.error(res.data.message, {
-              position: "top-center",
-              className: "error"
-            }).goAway(2000);
-          }
-        }).catch(msg => {
+        if (this.name == "") {
+          this.$toasted.error('姓名不能为空', {
+            position: "top-center"
+          }).goAway(2000);
+          return
+        } else if (this.tel == null || this.tel == "" || this.tel == undefined) {
+          this.$toasted.error('手机号码不能为空', {
+            position: "top-center"
+          }).goAway(2000);
+          return
+        } else if (this.companyName == "") {
+          this.$toasted.error('公司名称不能为空', {
+            position: "top-center"
+          }).goAway(2000);
+          return
+        } else {
+          let params = new URLSearchParams();
+          params.append("name", this.name);
+          params.append("tel", this.tel);
+          params.append("companyName", this.companyName);
+          let url = "http://192.168.0.213:8088/interface-web/sale/insert";
+          //let url = "http://183.134.110.234:18080/interface-web/sale/insert";
+          await this.$axios.post(url, params).then(res => {
+            if (res.status == 200 && res.data.error == 1) {
+              this.dialog.isShow = false;
+              this.$toasted.success('信息提交成功！请等待客服的联系', {
+                position: "top-center"
+              }).goAway(2000);
+            } else {
+              this.$toasted.error(res.data.message, {
+                position: "top-center",
+                className: "error"
+              }).goAway(2000);
+            }
+          }).catch(msg => {
 
-        })
+          })
+        }
       },
       closeMyself() {
         this.dialog.isShow = false;
