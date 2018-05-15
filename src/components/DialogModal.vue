@@ -6,25 +6,24 @@
         <form>
           <div class="dialog-head flex">
             <span>注册浩韵会员</span>
-            <span class="dialog-close" @click="closeMyself">x</span>
+            <span class="dialog-close" @click="closeMyself">&times;</span>
           </div>
           <div class="dialog-body">
             <div class="dialog-item flex">
-              <label name="name" for="name">姓名：</label>
+              <label name="name" for="name">会员姓名：</label>
               <input type="text" id="name" v-model.trim="name" placeholder="请输入姓名">
             </div>
             <div class="dialog-item flex">
               <label name="tel" for="tel">手机号码：</label>
-              <input type="text" id="tel" v-model.number="tel" placeholder="请输入正确的手机号码">
+              <input type="text" id="tel" v-model.number="tel" placeholder="请输入手机号码">
             </div>
             <div class="dialog-item flex">
               <label name="companyName" for="companyName">公司名称：</label>
               <input type="text" id="companyName" v-model.trim="companyName" placeholder="请输入公司名称">
             </div>
           </div>
-          <div class="dialog-foot flex">
+          <div class="dialog-foot">
             <button class="btn-confirm" @click="submit" :disabled="flag">确定提交</button>
-            <button class="btn-cancel" @click="closeMyself">取消</button>
           </div>
         </form>
       </div>
@@ -71,14 +70,14 @@
           params.append("name", this.name);
           params.append("tel", this.tel);
           params.append("companyName", this.companyName);
-          let url = "http://192.168.0.213:8088/interface-web/sale/insert";
-          //let url = "http://183.134.110.234:18080/interface-web/sale/insert";
+          //let url = "http://192.168.0.213:8088/interface-web/sale/insert";
+          let url = "http://183.134.110.234:18080/interface-web/sale/insert";
           await this.$axios.post(url, params).then(res => {
             if (res.status == 200 && res.data.error == 1) {
               this.dialog.isShow = false;
-              this.name="";
-              this.tel="";
-              this.companyName="";
+              this.name = "";
+              this.tel = "";
+              this.companyName = "";
               this.$toasted.success('信息提交成功！请等待客服的联系', {
                 position: "top-center"
               }).goAway(2000);
@@ -95,9 +94,9 @@
       },
       closeMyself() {
         this.dialog.isShow = false;
-        this.name="";
-        this.tel="";
-        this.companyName="";
+        this.name = "";
+        this.tel = "";
+        this.companyName = "";
         this.$emit('close', false)
       }
     }
@@ -144,28 +143,31 @@
       left: 50%;
       margin-left: -200px;
       z-index: 10;
-      border: 2px solid #239fe8;
       border-radius: 5px;
+      padding: 8px 0 15px;
       .dialog-head {
-        background: #239fe8;
-        padding: 5px 12px;
+        padding: 0 30px 8px;
         justify-content: space-between;
-        color: #fff;
+        border-bottom: 1px solid #eee;
+        color: #404040;
+        font-weight: 600;
         line-height: 30px;
         .dialog-close {
           cursor: pointer;
+          font-size: 28px;
+          font-weight: 500;
+          line-height: 26px;
         }
       }
       .dialog-body {
-        padding: 20px;
+        padding: 20px 30px;
         .dialog-item {
           justify-content: space-between;
-          margin-bottom: 8px;
+          margin-bottom: 10px;
           label {
-            width: 100px;
+            width: 80px;
             line-height: 30px;
             color: #404040;
-            text-align: right;
           }
           input {
             border-radius: 5px;
@@ -176,23 +178,31 @@
             flex: 1;
             padding-left: 8px;
           }
+          input::-webkit-input-placeholder {
+            color: #ccc;
+          }
+          input::-moz-placeholder {
+            color: #ccc;
+          }
+          input:-moz-placeholder {
+            color: #ccc;
+          }
+          input:-ms-input-placeholder {
+            color: #ccc;
+          }
         }
       }
       .dialog-foot {
-        width: 35%;
-        margin: 0 auto 15px;
-        justify-content: space-between;
+        padding: 0 30px;
         button {
+          width: 100%;
           outline: none;
           border: 1px solid #ccc;
           border-radius: 5px;
           line-height: 30px;
           cursor: pointer;
-          padding: 0 8px;
-          &.btn-confirm {
-            background: #239fe8;
-            color: #fff;
-          }
+          background: #239fe8;
+          color: #fff;
         }
       }
     }

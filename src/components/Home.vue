@@ -184,6 +184,7 @@
         }
       }
       .body {
+        margin: 50px auto;
         .mid {
           margin-top: 50px;
           .left {
