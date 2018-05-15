@@ -26,11 +26,9 @@
     margin: 0;
     padding: 0;
   }
-
   html {
     height: 100%;
     body {
-      overflow: scroll;
       height: 100%;
       .toasted {
         top: 300px !important;
@@ -41,7 +39,6 @@
         display: flex;
         flex-direction: column;
         background: #f5f5f5;
-
         .flex {
           display: flex;
         }
