@@ -3,7 +3,7 @@
     <div class="dialog-cover" v-if="dialog.isShow" @click="closeMyself"></div>
     <transition name="drop">
       <div class="dialog-content" v-if="dialog.isShow">
-        <form>
+        <form @submit.prevent="submit">
           <div class="dialog-head flex">
             <span>注册浩韵会员</span>
             <span class="dialog-close" @click="closeMyself">&times;</span>
@@ -15,7 +15,7 @@
             </div>
             <div class="dialog-item flex">
               <label name="tel" for="tel">手机号码：</label>
-              <input type="text" id="tel" v-model.number="tel" placeholder="请输入手机号码">
+              <input type="text" id="tel" v-model.number="tel" maxlength="11" placeholder="请输入手机号码">
             </div>
             <div class="dialog-item flex">
               <label name="companyName" for="companyName">公司名称：</label>
@@ -23,7 +23,7 @@
             </div>
           </div>
           <div class="dialog-foot">
-            <button class="btn-confirm" @click="submit" :disabled="flag">确定提交</button>
+            <button class="btn-confirm" :disabled="flag">确定提交</button>
           </div>
         </form>
       </div>
@@ -48,7 +48,7 @@
       }
     },
     methods: {
-      async submit() {
+      submit() {
         this.flag = true;
         setTimeout(() => {
           this.flag = false
@@ -72,7 +72,7 @@
           params.append("companyName", this.companyName);
           //let url = "http://192.168.0.213:8088/interface-web/sale/insert";
           let url = "http://183.134.110.234:18080/interface-web/sale/insert";
-          await this.$axios.post(url, params).then(res => {
+          this.$axios.post(url, params).then(res => {
             if (res.status == 200 && res.data.error == 1) {
               this.dialog.isShow = false;
               this.name = "";
@@ -139,7 +139,7 @@
       width: 400px;
       position: fixed;
       background: #fff;
-      top: 300px;
+      top: 220px;
       left: 50%;
       margin-left: -200px;
       z-index: 10;
